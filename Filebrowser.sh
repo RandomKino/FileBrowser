@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
-#=================================================
-#       System Required: CentOS/Debian/Ubuntu
-#       Description: Filebrowser Install
-#       Version: 2.0.0
-#       Author: vinew
-#       Blog: https://vinew.cc/
-#=================================================
 file="/etc/filebrowser/"
 filebrowser_bin="/etc/filebrowser/filebrowser"
 filebrowser_db_file="/etc/filebrowser/database.db"
@@ -112,14 +105,14 @@ Download_filebrowser(){
 Service_filebrowser(){
 	if [[ ! -e /etc/init.d/filebrowser ]]; then
 	if [[ ${release} = "centos" ]]; then
-	    if ! wget --no-check-certificate https://raw.githubusercontent.com/vinewx/script/master/requirement/filebrowser_centos -O /etc/init.d/filebrowser; then
+	    if ! wget --no-check-certificate https://raw.githubusercontent.com/RandomKino/FileBrowser/master/requirement/filebrowser_centos -O /etc/init.d/filebrowser; then
 			echo -e "${Error_font_prefix}[错误]${Font_suffix} Filebrowser服务 管理脚本下载失败 !" && exit 1
 		fi
 		chmod +x /etc/init.d/filebrowser
 		chkconfig --add filebrowser
 		chkconfig filebrowser on
 	else
-		if ! wget --no-check-certificate https://raw.githubusercontent.com/vinewx/script/master/requirement/filebrowser_debian -O /etc/init.d/filebrowser; then
+		if ! wget --no-check-certificate https://raw.githubusercontent.com/RandomKino/FileBrowser/master/requirement/filebrowser_debian -O /etc/init.d/filebrowser; then
 			echo -e "${Error_font_prefix}[错误]${Font_suffix} Filebrowser服务 管理脚本下载失败 !" && exit 1
 		fi
 		chmod +x /etc/init.d/filebrowser
@@ -192,10 +185,6 @@ while :; do
 	clear
     echo
 	echo -e "${Info_font_prefix}........... Filebrowser 一键脚本 ...........${Font_suffix}"
-	echo
-	echo -e "${Info_font_prefix}[Author]${Font_suffix}: vinewx"
-	echo
-	echo -e "${Info_font_prefix}[github]${Font_suffix}: https://github.com/vinewx/script"
 	echo
 	echo " 1. 安装"
 	echo
