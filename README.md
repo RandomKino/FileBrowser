@@ -1,5 +1,3 @@
-# 懒人专用一键脚本
-
 Filebrowser.sh
 ======
 
@@ -10,18 +8,4 @@ Filebrowser.sh
 ### 下载安装:
 ``` bash
 bash <(curl -L -s https://raw.githubusercontent.com/RandomKino/FileBrowser/master/Filebrowser.sh)
-```
-
-gocc.sh
-======
-
-- 脚本说明: GoCC 一键安装脚本
-- 系统支持: Linux/Unix
-- 使用方法: https://github.com/liuzl/gocc
-
-### 下载安装:
-``` bash
-wget --no-check-certificate --no-cache https://raw.githubusercontent.com/RandomKino/FileBrowser/master/gocc.sh
-chmod +x gocc.sh
-sudo ./gocc.sh
 ```
