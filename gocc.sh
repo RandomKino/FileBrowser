@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-#============================================
-#       System Required: Linux/Unix
-#       Description: GoCC Install
-#       Version: 1.0.1
-#       Author: vinew
-#       Blog: https://vinew.cc/
-#============================================
 file="/usr/local/share/gocc"
 gocc_bin="/usr/bin/gocc"
 gocc_config="/usr/local/share/gocc/config"
@@ -29,14 +22,14 @@ Download_gocc(){
         echo -e "${Error_font_prefix}[错误]${Font_suffix} 不支持 ${bit} !" && exit 1
     fi
 
-    ver=$(curl -s https://api.github.com/repos/vinewx/gocc/releases/latest | grep 'tag_name' | cut -d\" -f4)
-    gocc_download_link="https://github.com/vinewx/gocc/releases/download/$ver/$gocc"
+    ver=$(curl -s https://api.github.com/repos/RandomKino/gocc/releases/latest | grep 'tag_name' | cut -d\" -f4)
+    gocc_download_link="https://github.com/RandomKino/gocc/releases/download/$ver/$gocc"
     
     if ! wget --no-check-certificate --no-cache -O "/tmp/gocc.tar.gz" $gocc_download_link; then
         echo -e "${Error_font_prefix}[错误]${Font_suffix} gocc 下载失败 !" && exit 1
     fi
 
-    if ! wget --no-check-certificate --no-cache -O "/tmp/gocc.zip" https://github.com/vinewx/gocc/archive/master.zip; then
+    if ! wget --no-check-certificate --no-cache -O "/tmp/gocc.zip" https://github.com/RandomKino/gocc/archive/master.zip; then
         echo -e "${Error_font_prefix}[错误]${Font_suffix} gocc配置文件 下载失败 !" && exit 1
     fi
 
@@ -52,12 +45,6 @@ Download_gocc(){
 install_gocc(){
     if [[ -e ${gocc_bin} ]]; then
         clear
-        echo
-        echo -e "${Info_font_prefix}........... GoCC 一键脚本 ...........${Font_suffix}"
-        echo
-        echo -e "${Info_font_prefix}[Author]${Font_suffix}: vinewx"
-        echo
-        echo -e "${Info_font_prefix}[github]${Font_suffix}: https://github.com/vinewx/script"
         echo
         echo " 1. 确定"
         echo
@@ -84,12 +71,6 @@ uninstall_gocc(){
     check_installed_status
     clear
     echo
-    echo -e "${Info_font_prefix}........... GoCC 一键脚本 ...........${Font_suffix}"
-    echo
-    echo -e "${Info_font_prefix}[Author]${Font_suffix}: vinewx"
-    echo
-    echo -e "${Info_font_prefix}[github]${Font_suffix}: https://github.com/vinewx/script"
-    echo
     echo " 1. 确定"
     echo
     echo " 2. 取消"
@@ -110,12 +91,6 @@ uninstall_gocc(){
 bit=`uname -m`
 while :; do
     clear
-    echo
-    echo -e "${Info_font_prefix}........... GoCC 一键脚本 ...........${Font_suffix}"
-    echo
-    echo -e "${Info_font_prefix}[Author]${Font_suffix}: vinewx"
-    echo
-    echo -e "${Info_font_prefix}[github]${Font_suffix}: https://github.com/vinewx/script"
     echo
     echo " 1. 安装"
     echo
